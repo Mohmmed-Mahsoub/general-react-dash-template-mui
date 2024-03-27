@@ -1,7 +1,13 @@
-import "./App.css";
+import { CssBaseline } from "@mui/material";
+import AppRoutes from "./router/AppRoutes";
 
 function App() {
-  return <div>app</div>;
+  return (
+    <>
+      <CssBaseline /> {/* css reset with matrial ui */}
+      <AppRoutes />
+    </>
+  );
 }
 
 export default App;
