@@ -1,0 +1,14 @@
+.navbar {
+  padding: 1rem;
+  text-align: center;
+  background: #eee;
+}
+.navLink {
+  color: #333;
+}
+.navLink:not(:last-child) {
+  margin-right: 1rem;
+}
+.active {
+  color: #aaa;
+}
