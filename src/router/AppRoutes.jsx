@@ -5,8 +5,14 @@ import About from "@/pages/about/about.page";
 import NotFound from "@/pages/notFound/notFound.page";
 import Unauthorized from "@/pages/unauthorized/unauthorized.page";
 import ServerError from "@/pages/serverError/serverError.page";
+import { protectRoute } from "@/helpers/utilities/protectRoute";
+import useGetCurrentUserQueryExtend from "@/helpers/customHooks/useGetCurrentUserQueryExtend";
 
 const AppRoutes = () => {
+  /* const { isUnauthorized, loading } = useSelector((state) => state.user); */
+  const { userData, error, isLoading, isUnauthorized } =
+    useGetCurrentUserQueryExtend();
+
   const router = createHashRouter([
     {
       path: "/",
@@ -16,10 +22,12 @@ const AppRoutes = () => {
         {
           path: "",
           element: <Home />,
+          loader: () => protectRoute(isLoading, error, "home", isUnauthorized),
         },
         {
           path: "about",
           element: <About />,
+          loader: () => protectRoute(isLoading, error, "about", isUnauthorized),
         },
       ],
     },
@@ -30,10 +38,14 @@ const AppRoutes = () => {
     {
       path: "/unauthorized",
       element: <Unauthorized />,
+      loader: () =>
+        protectRoute(isLoading, error, "unauthorized", isUnauthorized),
     },
     {
       path: "/serverError",
       element: <ServerError />,
+      loader: () =>
+        protectRoute(isLoading, error, "serverError", isUnauthorized),
     },
     {
       path: "*",
@@ -41,7 +53,13 @@ const AppRoutes = () => {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  if (isLoading) {
+    return (
+      <div className="h-screen flex justify-center items-center">loading</div>
+    );
+  } else {
+    return <RouterProvider router={router} />;
+  }
 };
 
 export default AppRoutes;
