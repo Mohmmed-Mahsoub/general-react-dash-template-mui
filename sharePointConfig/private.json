@@ -1,0 +1,7 @@
+{
+  "siteUrl": "http://13.82.53.60:12490",
+  "strategy": "OnpremiseUserCredentials",
+  "username": "silo",
+  "password": "03786e5088cdcd3b2ae9f3bea3c8e3c74f3922fd6192dbca7dcd4a6fa15ba30b3d5f241ab81317a6250a4da90125eb5cYgnMSlmPl8BVrUJvxG5frA==",
+  "domain": "contoso.com"
+}
