@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "proxy": "node ./server.js",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -15,9 +16,13 @@
     "@mui/icons-material": "^5.15.14",
     "@mui/material": "^5.15.14",
     "@mui/x-data-grid": "^7.0.0",
+    "@reduxjs/toolkit": "^2.2.2",
+    "axios": "^1.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3"
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.3",
+    "sp-rest-proxy": "^3.3.6"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
