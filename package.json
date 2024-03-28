@@ -13,6 +13,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "@hookform/resolvers": "^3.3.4",
     "@mui/icons-material": "^5.15.14",
     "@mui/material": "^5.15.14",
     "@mui/x-data-grid": "^7.0.0",
@@ -20,9 +21,11 @@
     "axios": "^1.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.2",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.3",
-    "sp-rest-proxy": "^3.3.6"
+    "sp-rest-proxy": "^3.3.6",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
