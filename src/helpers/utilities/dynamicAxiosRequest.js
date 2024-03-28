@@ -1,0 +1,22 @@
+import { ProxyURL, requestHeaders } from "@/api/constants";
+import axios from "axios";
+
+export const dynamicAxiosRequest = async ({
+  baseUrl,
+  endPoint,
+  method = "GET",
+  body = null,
+}) => {
+  try {
+    const response = await axios({
+      url: `${ProxyURL}${baseUrl}${endPoint}`,
+      method: method,
+      data: body,
+      headers: requestHeaders,
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error; // Re-throw the error to be caught by the caller (this make redux to see the error and sign the request as rejected)
+  }
+};
